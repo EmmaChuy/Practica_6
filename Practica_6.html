@@ -1,0 +1,110 @@
+  <html>
+     <body bgcolor= " #7FFFD4">
+
+<center>TRABAJO 6 <h1></center>
+
+<table border=1>
+<form action="guardar.php" method="POST">
+
+<tr> 
+<td></td>
+<td>Producto</td>
+<td>Precio</td>
+</tr
+
+<tr>
+<td>1</td>
+<td><input type="text" name="Producto1"/><br/> </td>
+<td><input type="text" name="Precio1" /><br/> </td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><input type="text" name="Producto2"/><br/> </td>
+<td><input type="text" name="Precio2" /><br/> </td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><input type="text" name="Producto3"/><br/> </td>
+<td><input type="text" name="Precio3" /><br/> </td>
+</tr>
+</table>
+</form>
+<br>
+
+<input type="submit" name="boton">
+
+
+      </body>
+  </html>
+
+
+
+
+Esto es lo que va a en PHP:
+
+
+$Producto1=$_POST["Producto1"];
+$Precio1=$_POST["Precio1"];
+
+$Producto2=$_POST["Producto2"];
+$Precio2=$_POST["Precio2"];
+
+$Producto3=$_POST["Producto3"];
+$Precio3=$_POST["Producto3"];
+
+$Subtotal= $Producto1+$Producto2+$Prodcuto3;
+$IVA = $Subtotal*.16;
+
+$Total = $Subtotal+$IVA;
+?>
+<form action="guardar.php" method="POST">
+<table border=1>
+<tr> 
+<td></td>
+<td>Producto</td>
+<td>Precio</td>
+</tr
+
+<tr>
+<td>1</td>
+<td><?php echo "$Producto1"?> </td>
+<td><?php echo "$Precio1" ?> </td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><?php echo "$Producto2"?></td>
+<td><?php echo "$Precio2" ?></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><?php echo "$Producto3"?><br/> </td>
+<td><?php echo "$Precio3" ?><br/> </td>
+</tr>
+<br>
+
+<tr>
+<td></td>
+<td>Subtotal</td>
+<td><?php echo("$".$Subtotal) ?></td>
+</tr>
+
+<tr>
+<td></td>
+<td>IVA</td>
+<td><?php echo("$".$IVA) ?></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Total</td>
+<td><?php echo("$".$Total) ?></td>
+</tr>
+
+</html>
+</body>
+</table>
+<?php
